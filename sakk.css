@@ -1,0 +1,38 @@
+body{
+    background-color: #363543;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tabla{
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px;
+}
+
+.feher,.zold{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.feher{
+    background-color: antiquewhite;
+}
+
+.zold{
+    background-color: #769656;
+}
+
+.piros{
+    background-color: red;
+}
+
+.kek{
+    background-color: #1f1f87;
+    border: 0.5px white solid;
+}
