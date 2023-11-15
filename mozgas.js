@@ -236,7 +236,6 @@ function BastyaMozgasLehetoseg(babuId, matrix){
     let kekMezok = []
     let elore
     kekMezok.push(babuId)
-
     
     let tomb = EgyenesenJobbra(aktsor,aktoszlop,matrix)
     kekMezok = kekMezok.concat(tomb)
@@ -412,13 +411,12 @@ function TortentKoronazas(ujHejEsUtes, matrix){
     return beértAGyalog
 }
 
-function Koronazas(ujHejEsUtes,matrix, leFeherek, leFeketek, szin){
+function Koronazas(ujHejEsUtes,matrix, szin){
     let mezo = document.querySelector("#" + ujHejEsUtes[0])
     const aktoszlop = CharToInt(ujHejEsUtes[0])
     const aktsor = ujHejEsUtes[0][1] - 1
     const lehtsegesBabuk = ["bástya", "ló", "futó", "királynő"]
     let beJo = false
-    console.log("lefekte meret: " + leFeketek.length)
     
     do {
         let be = prompt("Milyen bábút szeretnél visszatenni?\nLehetőségek: bástya, ló, futó vagy királynő!")
@@ -430,17 +428,13 @@ function Koronazas(ujHejEsUtes,matrix, leFeherek, leFeketek, szin){
 
             if(szin == "w"){
                 matrix[aktsor][aktoszlop] = babu
-                mezo.style.backgroundImage = "url('../sakk/bábuk/" + babu + ".png')"
-                // const indexToDelete = leFeherek.indexOf(babu);
-                // leFeherek.splice(indexToDelete, 1)
+                mezo.style.backgroundImage = "url('../bábuk/" + babu + ".png')"
                 beJo = true
             }
 
             else if(szin == "b"){
                 matrix[aktsor][aktoszlop] = babu
-                mezo.style.backgroundImage = "url('../sakk/bábuk/" + babu + ".png')"
-                // const indexToDelete = leFeketek.indexOf(babu);
-                // leFeketek.splice(indexToDelete, 1)
+                mezo.style.backgroundImage = "url('../bábuk/" + babu + ".png')"
                 beJo = true
             }
             else
@@ -472,7 +466,6 @@ function Patt(matrix, sz){
 
     lepesek = KiralyKorrigalas(lepesek,ellenfelLepes)
 
-    console.log("Patt bábuk:" + lepesek)
     if(lepesek.length === 0)
         return true
     else

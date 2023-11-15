@@ -1,41 +1,41 @@
 function kiinduloTabla(){
     //fekete bábuk
-    document.querySelector("#a8").style.backgroundImage = "url('../sakk/bábuk/br.png')";
-    document.querySelector("#b8").style.backgroundImage = "url('../sakk/bábuk/bn.png')";
-    document.querySelector("#c8").style.backgroundImage = "url('../sakk/bábuk/bb.png')";
-    document.querySelector("#d8").style.backgroundImage = "url('../sakk/bábuk/bq.png')";
-    document.querySelector("#e8").style.backgroundImage = "url('../sakk/bábuk/bk.png')";
-    document.querySelector("#f8").style.backgroundImage = "url('../sakk/bábuk/bb.png')";
-    document.querySelector("#g8").style.backgroundImage = "url('../sakk/bábuk/bn.png')";
-    document.querySelector("#h8").style.backgroundImage = "url('../sakk/bábuk/br.png')";
+    document.querySelector("#a8").style.backgroundImage = "url('../bábuk/br.png')";
+    document.querySelector("#b8").style.backgroundImage = "url('../bábuk/bn.png')";
+    document.querySelector("#c8").style.backgroundImage = "url('../bábuk/bb.png')";
+    document.querySelector("#d8").style.backgroundImage = "url('../bábuk/bq.png')";
+    document.querySelector("#e8").style.backgroundImage = "url('../bábuk/bk.png')";
+    document.querySelector("#f8").style.backgroundImage = "url('../bábuk/bb.png')";
+    document.querySelector("#g8").style.backgroundImage = "url('../bábuk/bn.png')";
+    document.querySelector("#h8").style.backgroundImage = "url('../bábuk/br.png')";
     
-    document.querySelector("#a7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#b7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#c7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#d7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#e7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#f7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#g7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
-    document.querySelector("#h7").style.backgroundImage = "url('../sakk/bábuk/bp.png')";
+    document.querySelector("#a7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#b7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#c7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#d7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#e7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#f7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#g7").style.backgroundImage = "url('../bábuk/bp.png')";
+    document.querySelector("#h7").style.backgroundImage = "url('../bábuk/bp.png')";
 
     //fehér bábuk
-    document.querySelector("#a1").style.backgroundImage = "url('../sakk/bábuk/wr.png')";
-    document.querySelector("#b1").style.backgroundImage = "url('../sakk/bábuk/wn.png')";
-    document.querySelector("#c1").style.backgroundImage = "url('../sakk/bábuk/wb.png')";
-    document.querySelector("#d1").style.backgroundImage = "url('../sakk/bábuk/wq.png')";
-    document.querySelector("#e1").style.backgroundImage = "url('../sakk/bábuk/wk.png')";
-    document.querySelector("#f1").style.backgroundImage = "url('../sakk/bábuk/wb.png')";
-    document.querySelector("#g1").style.backgroundImage = "url('../sakk/bábuk/wn.png')";
-    document.querySelector("#h1").style.backgroundImage = "url('../sakk/bábuk/wr.png')";
+    document.querySelector("#a1").style.backgroundImage = "url('../bábuk/wr.png')";
+    document.querySelector("#b1").style.backgroundImage = "url('../bábuk/wn.png')";
+    document.querySelector("#c1").style.backgroundImage = "url('../bábuk/wb.png')";
+    document.querySelector("#d1").style.backgroundImage = "url('../bábuk/wq.png')";
+    document.querySelector("#e1").style.backgroundImage = "url('../bábuk/wk.png')";
+    document.querySelector("#f1").style.backgroundImage = "url('../bábuk/wb.png')";
+    document.querySelector("#g1").style.backgroundImage = "url('../bábuk/wn.png')";
+    document.querySelector("#h1").style.backgroundImage = "url('../bábuk/wr.png')";
 
-    document.querySelector("#a2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#b2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#c2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#d2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#e2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#f2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#g2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
-    document.querySelector("#h2").style.backgroundImage = "url('../sakk/bábuk/wp.png')";
+    document.querySelector("#a2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#b2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#c2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#d2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#e2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#f2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#g2").style.backgroundImage = "url('../bábuk/wp.png')";
+    document.querySelector("#h2").style.backgroundImage = "url('../bábuk/wp.png')";
 }
 
 

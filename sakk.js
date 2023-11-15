@@ -16,10 +16,7 @@ kiinduloTabla();
 
  function jatek(){
     let kor = 0;
-    let leutottFeher = []
-    let leutottFekete = []
     let sancBabuk = [] 
-    let visszatehetoBabuk = ["wr", "wn", "wb", "wq","br", "bn", "bb", "bq"]
     let vege = false
     let szin = "w"
 
@@ -29,8 +26,6 @@ kiinduloTabla();
     let utolsoKattintas = null;
     let kekmezo = []
     let ujHejEsUtes = []
-    
-    //console.log(tabla["a8"[1] - 1][CharToInt("a8")])
 
     mezok.forEach(div => {
         div.addEventListener('click', function() {
@@ -49,39 +44,36 @@ kiinduloTabla();
                     }           
                                        
                     ujHejEsUtes = Lepes(kekmezo[0],aktClick.id,tabla)
-                    if(ujHejEsUtes[1][0] == "w" && visszatehetoBabuk.includes(ujHejEsUtes[1]))
-                        leutottFeher.push(ujHejEsUtes[1])
-                    if(ujHejEsUtes[1][0] == "b" && visszatehetoBabuk.includes(ujHejEsUtes[1]))
-                    leutottFekete.push(ujHejEsUtes[1])
                    
                     console.table(tabla)
+                    
                     //Sánc végrehajtása
                     if(kekmezo[0] == "e1" && ujHejEsUtes[0] == "g1"){
                         tabla[0][7] = ""
                         tabla[0][5] = "wr"
                         document.querySelector("#h1").style.backgroundImage = ""
-                        document.querySelector("#f1").style.backgroundImage = "url('../sakk/bábuk/wr.png')";
+                        document.querySelector("#f1").style.backgroundImage = "url('../bábuk/wr.png')";
                     }
 
                     if(kekmezo[0] == "e1" && ujHejEsUtes[0] == "c1"){
                         tabla[0][0] = ""
                         tabla[0][3] = "wr"
                         document.querySelector("#a1").style.backgroundImage = ""
-                        document.querySelector("#d1").style.backgroundImage = "url('../sakk/bábuk/wr.png')";
+                        document.querySelector("#d1").style.backgroundImage = "url('../bábuk/wr.png')";
                     }
                     
                     if(kekmezo[0] == "e8" && ujHejEsUtes[0] == "g8"){
                             tabla[7][7] = ""
                             tabla[7][5] = "br"
                             document.querySelector("#h8").style.backgroundImage = ""
-                            document.querySelector("#f8").style.backgroundImage = "url('../sakk/bábuk/br.png')";
+                            document.querySelector("#f8").style.backgroundImage = "url('../bábuk/br.png')";
                     }
 
                     if(kekmezo[0] == "e8" && ujHejEsUtes[0] == "c8"){
                         tabla[7][0] = ""
                         tabla[7][3] = "br"
                         document.querySelector("#a8").style.backgroundImage = ""
-                        document.querySelector("#d8").style.backgroundImage = "url('../sakk/bábuk/br.png')";
+                        document.querySelector("#d8").style.backgroundImage = "url('../bábuk/br.png')";
                     }
 
                     console.log("Kekmezok: " + kekmezo)
@@ -97,7 +89,7 @@ kiinduloTabla();
                         alert("Sakk helyzet!")
 
                     if(TortentKoronazas(ujHejEsUtes,tabla)){
-                        Koronazas(ujHejEsUtes,tabla,leutottFeher,leutottFekete,szin)
+                        Koronazas(ujHejEsUtes,tabla,szin)
                     }
                     
                 }
@@ -114,9 +106,8 @@ kiinduloTabla();
                     utolsoKattintas = this;
                     kekmezo = []
                     szin = "w"
-
                    
-                    //Ha gyalogot kerül mozdításra
+                    //Ha a gyalog kerül mozdításra vagy áganként valamelyik más bábú
                     if (tabla[this.id[1] - 1][CharToInt(this.id)][1] == 'p'){
                         kekmezo = GyalogMozgasLehetoseg(utolsoKattintas.id,tabla)
                         Kekezes(kekmezo)
