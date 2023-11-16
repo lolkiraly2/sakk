@@ -1,5 +1,4 @@
 const tabla = [
-    
     ["wr", "wn", "wb", "wq", "wk", "wb", "wn", "wr"],
     ["wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"],
     ["", "", "", "", "", "", "", ""],
@@ -13,12 +12,13 @@ const tabla = [
 //console.table(tabla)
 
 kiinduloTabla();
+let szin = "w"
 
  function jatek(){
     let kor = 0;
     let sancBabuk = [] 
     let vege = false
-    let szin = "w"
+    
 
     //Bábú kijelölése
     //A tábla 1-től 8-ig van számozva, a mátrix 0-tól 7-ig
@@ -32,8 +32,7 @@ kiinduloTabla();
             PirosTisztitas()
             KekTisztitas()
             const aktClick = this
-            if(Patt(tabla,szin) == true)
-            alert("Patt!") 
+            
 
             if(kekmezo.length != 0 && kekmezo[0] != aktClick.id  &&  kekmezo.includes(aktClick.id)){
                 
@@ -44,9 +43,22 @@ kiinduloTabla();
                     }           
                                        
                     ujHejEsUtes = Lepes(kekmezo[0],aktClick.id,tabla)
+                    let eszin = ""
+                    if(szin == "w")
+                        eszin = "b"
+                    else
+                        eszin = "w"
+                    if(Patt(tabla,eszin) == true){
+                        let gyoztes = ""
+                        if(szin == "w")
+                            gyoztes = "fehért"
+                        else
+                            gyoztes = "fekete"
+                        document.querySelector("h1").innerText = "Patt! Az eredmény döntetlen!"
+                    }
                    
                     console.table(tabla)
-                    
+
                     //Sánc végrehajtása
                     if(kekmezo[0] == "e1" && ujHejEsUtes[0] == "g1"){
                         tabla[0][7] = ""
@@ -81,12 +93,21 @@ kiinduloTabla();
                     
                     kor++
                     kekmezo = []
-                    
                     //console.table(tabla)
                     console.log(ujHejEsUtes)             
 
-                    if(Sakk(ujHejEsUtes, tabla))
+                    if(Sakk(ujHejEsUtes, tabla)){
                         alert("Sakk helyzet!")
+
+                        if(!SakkMatt(ujHejEsUtes[0],tabla,szin,sancBabuk)){
+                            let gyoztes = ""
+                            if(szin == "w")
+                                gyoztes = "fehért"
+                            else
+                                gyoztes = "fekete"
+                            document.querySelector("h1").innerText = "A " + gyoztes + " győzött!"
+                        }
+                    }               
 
                     if(TortentKoronazas(ujHejEsUtes,tabla)){
                         Koronazas(ujHejEsUtes,tabla,szin)
@@ -181,5 +202,6 @@ kiinduloTabla();
     });
 
  }
+
 
  jatek()

@@ -98,7 +98,6 @@ function JobbraFel(aktsor,aktoszlop,matrix){
             j++;
         }
     }
-    
     return mezok
 }
 
@@ -120,7 +119,6 @@ function BalraFel(aktsor,aktoszlop,matrix){
             j--;
         }
     }
-
     return mezok
 }
 
@@ -145,7 +143,6 @@ function BalraLe(aktsor,aktoszlop,matrix){
     return mezok
 }
 
-
 function JobbraLe(aktsor,aktoszlop,matrix){
     let mezok = []
     i = aktsor - 1, j = aktoszlop + 1
@@ -166,7 +163,6 @@ function JobbraLe(aktsor,aktoszlop,matrix){
     } 
     return mezok
 }
-
 
 function EgyenesenJobbra(aktsor,aktoszlop,matrix){
     let mezok = []
@@ -284,8 +280,9 @@ function lehetsegesLepesek(matrix, szin){
                 
                 else if(m[i][j][1] == 'k')
                 ellenfelLepes = KiralyMozgasLehetoseg(id,matrix)
-          
-                ellenfelLepes.shift()
+                
+                if(ellenfelLepes.length > 0)
+                    ellenfelLepes.shift()
                 for(let k = 0; k < ellenfelLepes.length; k++)
                 if(!lehetsegesLepesTomb.includes(ellenfelLepes[k]))
                     lehetsegesLepesTomb.push(ellenfelLepes[k])

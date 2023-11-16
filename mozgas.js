@@ -118,7 +118,7 @@ function KiralyMozgasLehetosegSanccal(babuId, matrix,sancbabu,sz){
     ellenfelszín = "w"
 
     let ellenfelMozgastere = lehetsegesLepesek(matrix,ellenfelszín)
-    console.log(ellenfelMozgastere)
+    //console.log(ellenfelMozgastere)
    
    if(!sancbabu.includes("e1") && sz === "w"){
     //sánc jobbra
@@ -129,7 +129,7 @@ function KiralyMozgasLehetosegSanccal(babuId, matrix,sancbabu,sz){
 
         //sánc balra
         if(!sancbabu.includes(babuId) && (!sancbabu.includes("a1") || !sancbabu.includes("a8")) && matrix[aktsor][aktoszlop -1] == "" && matrix[aktsor][aktoszlop - 2] == "" 
-        && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 1)  + (aktsor + 1))  && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 2)  + (aktsor + 1))){
+        && matrix[aktsor][aktoszlop - 3] == "" && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 1)  + (aktsor + 1))  && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 2)  + (aktsor + 1))){
             kekMezok.push(IntToChar(aktoszlop - 2)  + (aktsor + 1))
         }
     }
@@ -143,7 +143,7 @@ function KiralyMozgasLehetosegSanccal(babuId, matrix,sancbabu,sz){
     
             //sánc balra
             if(!sancbabu.includes(babuId) && (!sancbabu.includes("a1") || !sancbabu.includes("a8")) && matrix[aktsor][aktoszlop -1] == "" && matrix[aktsor][aktoszlop - 2] == "" 
-            && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 1)  + (aktsor + 1))  && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 2)  + (aktsor + 1))){
+            && matrix[aktsor][aktoszlop - 3] == "" && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 1)  + (aktsor + 1))  && !ellenfelMozgastere.includes(IntToChar(aktoszlop - 2)  + (aktsor + 1))){
                 kekMezok.push(IntToChar(aktoszlop - 2)  + (aktsor + 1))
             }
         }
@@ -315,19 +315,19 @@ function Sakk(helyUt, matrix){
     const aktsor = helyUt[0][1] - 1
 
     if (matrix[aktsor][aktoszlop][1] == 'p')
-    kovKekek = GyalogMozgasLehetoseg(helyUt[0],matrix)
+        kovKekek = GyalogMozgasLehetoseg(helyUt[0],matrix)
    
     else if(matrix[aktsor][aktoszlop][1] == 'n')
-    kovKekek = LoMozgasLehetoseg(helyUt[0],matrix)
+        kovKekek = LoMozgasLehetoseg(helyUt[0],matrix)
 
     else if(matrix[aktsor][aktoszlop][1] == 'b')
-    kovKekek = FutoMozgasLehetoseg(helyUt[0],matrix)
+        kovKekek = FutoMozgasLehetoseg(helyUt[0],matrix)
 
     else if(matrix[aktsor][aktoszlop][1] == 'r')
-    kovKekek = BastyaMozgasLehetoseg(helyUt[0],matrix)
+        kovKekek = BastyaMozgasLehetoseg(helyUt[0],matrix)
 
     else if(matrix[aktsor][aktoszlop][1] == 'q')
-    kovKekek = KiralynoLehetsegesLepes(helyUt[0],matrix)
+        kovKekek = KiralynoLehetsegesLepes(helyUt[0],matrix)
 
     kovKekek.shift()
 
@@ -355,8 +355,8 @@ function ProbaLepes(lepesMezok, lepesHelye, matrix,sancbabu){
 
     probaTabla[lepesHelye[1] - 1][CharToInt(lepesHelye)] = probaTabla[lepesMezok[1] - 1][CharToInt(lepesMezok)]
     probaTabla[lepesMezok[1] - 1][CharToInt(lepesMezok)] = ""
-    console.log("feltételes változás")
-    console.table(probaTabla)
+    //console.log("feltételes változás")
+    //console.table(probaTabla)
 
     let lehetsegesEllenfelLepes = []
 
@@ -470,6 +470,96 @@ function Patt(matrix, sz){
         return true
     else
         return false
+}
+
+function SakkMatt(sakkBabu, matrix, sz, sb){
+    let lehetVedeni = false
+
+    let kiralyMezoje = ""
+    let szin = ""
+    if(sz === "w")
+        szin = "b"
+    else
+        szin = "w"
+
+    console.log("sAKK MATT: " + szin)
+    for(let i = 0; i < 8; i++)
+        for(let j = 0; j < 8; j++)
+            if(matrix[i][j][0] == szin && matrix[i][j][1] == "k"){
+                kiralyMezoje = IntToChar(j) + (i + 1)
+                break
+            }                  
+    
+    let kovKekek = []
+    const aktoszlop = CharToInt(sakkBabu)
+    const aktsor = sakkBabu[1] - 1
+
+    if (matrix[aktsor][aktoszlop][1] == 'p')
+        kovKekek = GyalogMozgasLehetoseg(sakkBabu,matrix)
+    
+    else if(matrix[aktsor][aktoszlop][1] == 'n')
+        kovKekek = LoMozgasLehetoseg(sakkBabu,matrix)
+
+    else if(matrix[aktsor][aktoszlop][1] == 'b')
+        kovKekek = FutoMozgasLehetoseg(sakkBabu,matrix)
+
+    else if(matrix[aktsor][aktoszlop][1] == 'r')
+        kovKekek = BastyaMozgasLehetoseg(sakkBabu,matrix)
+
+    else if(matrix[aktsor][aktoszlop][1] == 'q')
+        kovKekek = KiralynoLehetsegesLepes(sakkBabu,matrix)
+
+
+    let kiralyLehetsegesLepesei = KiralyMozgasLehetosegSanccal(kiralyMezoje,matrix,sb,szin)
+    kiralyLehetsegesLepesei.shift()
+    console.log("Ellenfel támadás: " + kovKekek)
+    //console.log("Királyom: " + kiralyLehetsegesLepesei)
+
+    if(kiralyLehetsegesLepesei.length > 0){
+        lehetVedeni = true
+    }
+
+    else{
+        for(let i = 0; i < 8; i++){
+            for(let j = 0; j < 8; j++){
+                let lehetsegVedekezes = []
+                if(matrix[i][j][0] == szin){  
+                    let babu = IntToChar(j) + (i + 1)
+                    if (matrix[i][j][1] == 'p')
+                        lehetsegVedekezes = GyalogMozgasLehetoseg(babu,matrix)           
+                    
+                    else if(matrix[i][j][1] == 'n')
+                        lehetsegVedekezes = LoMozgasLehetoseg(babu,matrix)
+
+                    else if(matrix[i][j][1] == 'b')
+                        lehetsegVedekezes = FutoMozgasLehetoseg(babu,matrix)
+
+                    else if(matrix[i][j][1] == 'r')
+                        lehetsegVedekezes = BastyaMozgasLehetoseg(babu,matrix)
+
+                    else if(matrix[i][j][1] == 'q')
+                        lehetsegVedekezes = KiralynoLehetsegesLepes(babu,matrix)
+                }
+
+                if(lehetsegVedekezes.length > 0){
+                    lehetsegVedekezes.shift()
+                    for(let k = 0; k < lehetsegVedekezes.length; k++)
+                    if(kovKekek.includes(lehetsegVedekezes[k])){
+                        lehetVedeni = true   
+                    }
+                }
+                
+            }
+       }
+    }
+
+    if(lehetVedeni)
+        console.log("Lehet védeni")
+    else
+        console.log("Sakk matt!")
+
+    return lehetVedeni
+
 }
 
 function NevToChar(nev, sz){
