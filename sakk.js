@@ -49,11 +49,6 @@ let szin = "w"
                     else
                         eszin = "w"
                     if(Patt(tabla,eszin) == true){
-                        let gyoztes = ""
-                        if(szin == "w")
-                            gyoztes = "fehért"
-                        else
-                            gyoztes = "fekete"
                         document.querySelector("h1").innerText = "Patt! Az eredmény döntetlen!"
                     }
                    
