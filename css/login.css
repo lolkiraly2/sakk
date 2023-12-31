@@ -22,9 +22,12 @@ a{
   left: 50%;
   transform: translate(-50%, -50%);
   background: none;
+  border: solid white 4px;
+  border-radius: 20px;
 }
 
-.login button {
+.login input {
+  border: 0;
   background: none;
   display: block;
   margin: 5px auto;
@@ -38,13 +41,14 @@ a{
   border-radius: 24px;
   transition: 0.25s;
 }
-.login button:focus{
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
   width: 280px;
   border-color: white;
   background: none;
 }
 
-.login button:hover {
+.login input[type="submit"]:hover {
   background-color: white;
   color: black;
   cursor: pointer;

@@ -9,3 +9,7 @@ function regUrl() {
 function guestUrl() {
     window.location.href = "sakk.html";
 }
+
+function logout() {
+    window.location.href = "kapcsbont.php";
+}

@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -8,9 +12,15 @@
 <body>
     <div class ="login">
         <h1>Javascript sakk</h1>
-        <button onclick="logUrl()">Bejelentkezés</button>
-        <button>Regisztráció</button>
+        <h2><?php if (isset($_SESSION['fnev'])) echo "Üdvözöllek, " . $_SESSION['fnev'] . "!" ?></h2>
+        <?php
+        if (isset($_SESSION['fnev'])) echo '<button onclick="logout()">Kijelentkezés</button>';
+        else echo '<button onclick="logUrl()">Bejelentkezés</button><button>Regisztráció</button>';
+        ?>
+
+        
         <button onclick="guestUrl()">Játék vendégként</button>
+        <p></p>
         
     </div>
 </body>
