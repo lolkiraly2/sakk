@@ -14,7 +14,17 @@
             <label for="password"><input name="password" id="password" type="password" placeholder = "Jelszó" required></label><br>
             <input type="submit" value="Bejelentkezés" id = "submitl">
         </form>
-        <h3><?php if (isset($_SESSION['logerror']) && $_SESSION['logerror'] == true) echo "Hibás felhasználónév vagy jelszó!";  $_SESSION['logerror'] == false?> </h3>
+        <h3>
+            <?php if (isset($_SESSION['logerror'])){
+                if($_SESSION['logerror'] == true){
+                    echo "Hibás felhasználónév vagy jelszó!";  
+                    $_SESSION['logerror'] = false;
+                } 
+                
+            }?> 
+        </h3>
+            
+            
         <a href="index.php"><p>Vissza a főoldalra</p></a>
     </div>
 </body>

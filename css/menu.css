@@ -7,7 +7,7 @@ body {
   font-family: "Balsamiq Sans", 'Times New Roman', Times, serif;
 }
 
-h1 {text-align: center;}
+h1,h2 {text-align: center;}
 a p{text-align: center;}
 
 a{
