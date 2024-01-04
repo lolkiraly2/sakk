@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Bejelentkezés</title>
     <link rel = "stylesheet" href = "css/menu.css">
+    <link rel="icon" type="image/x-icon" href="kiralyno.ico">
 </head>
 <body>
     <div class ="login">

@@ -12,10 +12,11 @@ function kapcsolodas($kapcsolatiSzoveg, $felhasznalonev = "", $jelszo = ""){
     $stmt = $kapcsolat->prepare("SELECT id FROM jatekosok WHERE felhasznalonev = :username AND jelszo = :pw");
     $stmt-> execute([
         "username" => $_POST["username"],
-        "pw" => $_POST["password"]
+        "pw" => md5($_POST["password"]) 
     ]);
 
     $user_id = $stmt ->fetchAll();
+    //var_dump(md5($_POST["password"]))
 
     if(count($user_id) == 1){
         $_SESSION['fnev'] = $_POST["username"];

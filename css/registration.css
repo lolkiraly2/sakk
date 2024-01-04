@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 
 body {
-  background-color: #34495e;
+  background-color: #363543;
   color: white;
   font-family: "Balsamiq Sans", 'Times New Roman', Times, serif;
   max-width: 100%;
@@ -19,14 +19,14 @@ a{
 
 textarea{margin-bottom: 1rem;}
 
-.reg {
+#reg {
   margin: 3rem auto;
   max-width: 1000px;
   border: solid white 4px;
   border-radius: 20px;
 }
 
-.reg input, button {
+#reg input, button {
   border: 0;
   background: none;
   display: block;
@@ -42,7 +42,7 @@ textarea{margin-bottom: 1rem;}
   transition: 0.25s;
 }
 
-.reg input[type = "radio"], .reg input[type = "checkbox"]{
+#reg input[type = "radio"], #reg input[type = "checkbox"]{
   
   width: 2rem;
   height: 20px;
@@ -50,18 +50,18 @@ textarea{margin-bottom: 1rem;}
   float: left;
 }
 
-input:invalid {
+#reg input:invalid {
   border: 2px solid red;
 }
 
-.reg input[type="text"]:focus,
-.reg input[type="password"]:focus, .reg input[type="email"]:focus {
+#reg input[type="text"]:focus,
+#reg input[type="password"]:focus, #reg input[type="email"]:focus {
   width: 40ch;
   border-color: white;
   background: none;
 }
 
-.reg button:hover, .reg input[type="reset"]:hover {
+#reg button:hover, #reg input[type="reset"]:hover,#reg input[type="submit"]:hover {
   background-color: white;
   color: black;
   cursor: pointer;
