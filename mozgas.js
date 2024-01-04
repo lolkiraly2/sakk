@@ -428,13 +428,13 @@ function Koronazas(ujHejEsUtes,matrix, szin){
 
             if(szin == "w"){
                 matrix[aktsor][aktoszlop] = babu
-                mezo.style.backgroundImage = "url('../bábuk/" + babu + ".png')"
+                mezo.style.backgroundImage = "url('bábuk/" + babu + ".png')"
                 beJo = true
             }
 
             else if(szin == "b"){
                 matrix[aktsor][aktoszlop] = babu
-                mezo.style.backgroundImage = "url('../bábuk/" + babu + ".png')"
+                mezo.style.backgroundImage = "url('bábuk/" + babu + ".png')"
                 beJo = true
             }
             else

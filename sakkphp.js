@@ -49,7 +49,11 @@ let szin = "w"
                     else
                         eszin = "w"
                     if(Patt(tabla,eszin) == true){
+                        let form = document.querySelector("#eredmeny")
                         document.querySelector("h1").innerText = "Patt! Az eredmény döntetlen!"
+                        document.querySelector("#gyoztes").value = "döntetlen"
+                        document.querySelector("#vesztes").value = "döntetlen"
+                        form.submit()
                     }
                    
                     console.table(tabla)
@@ -96,11 +100,24 @@ let szin = "w"
 
                         if(!SakkMatt(ujHejEsUtes[0],tabla,szin,sancBabuk)){
                             let gyoztes = ""
-                            if(szin == "w")
+                            let bnev = document.querySelector("#bname").innerText
+                            let fnev = document.querySelector("#wname").innerText
+                            let form = document.querySelector("#eredmeny")
+                            if(szin == "w"){
                                 gyoztes = "fehért"
-                            else
+                                document.querySelector("#gyoztes").value = fnev
+                                document.querySelector("#vesztes").value = bnev
+                                form.submit()
+                            }
+                                
+                            else{
                                 gyoztes = "fekete"
-                            document.querySelector("h1").innerText = "A " + gyoztes + " győzött!"
+                                document.querySelector("#gyoztes").value = bnev
+                                document.querySelector("#vesztes").value = fnev
+                                form.submit()
+                            }
+                                
+                            //document.querySelector("h1").innerText = "A " + gyoztes + " győzött!"
                         }
                     }               
 

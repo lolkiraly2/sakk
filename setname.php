@@ -20,7 +20,7 @@ function kapcsolodas($kapcsolatiSzoveg, $felhasznalonev = "", $jelszo = ""){
     <link rel="icon" type="image/x-icon" href="kiralyno.ico">
 </head>
 <body>
-    <form class ="login" id="names" method="post" action="rd.php">
+    <form class ="login" id="names" method="post" action="sakk.php">
         <h1>Javascript sakk</h1>
         <label for="feherjatekos" >Fehér játékos neve:</label>
         <input type="text" name="feherjatekos" id="feherjatekos" required value="<?php echo$_SESSION['fnev'] ?>" readonly minlength="8" maxlength="20">

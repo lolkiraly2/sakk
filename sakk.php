@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -9,6 +10,7 @@
 </head>
 <body>
     <h1></h1>
+    <p><?php echo 'Fekete: <span id = "bname">' .$_POST['feketejatekos'] . '</span>' ?></p>
     <div id="tabla">
 
             <div id="a8" class="zold"></div>
@@ -98,16 +100,16 @@
             <div id="h1" class="zold"></div>
           
     </div>
-    <form action="update.php" method="post" hidden>
-        <input type="text" name="feher" id="feher">
-        <input type="text" name="fekete" id="fekete">
-
+    <p><?php echo 'Feher: <span id = "wname">' .$_POST['feherjatekos'] . '</span>' ?></p>
+    <form id="eredmeny" action="update.php" method="post">
+        <input type="text" name="gyoztes" id="gyoztes">
+        <input type="text" name="vesztes" id="vesztes">
     </form>
 
 
     <script src="start.js"></script>
     <script src="mozgas.js"></script>
-    <script src="sakk.js" ></script>
+    <script src="sakkphp.js" ></script>
     
 </body>
 
