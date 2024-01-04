@@ -40,7 +40,6 @@ a{
   transition: 0.25s;
 }
 .login button:focus{
-  width: 280px;
   border-color: white;
   background: none;
 }

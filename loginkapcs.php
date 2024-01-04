@@ -11,8 +11,8 @@ function kapcsolodas($kapcsolatiSzoveg, $felhasznalonev = "", $jelszo = ""){
     
     $stmt = $kapcsolat->prepare("SELECT id FROM jatekosok WHERE felhasznalonev = :username AND jelszo = :pw");
     $stmt-> execute([
-        "username" => $_POST["username"],
-        "pw" => md5($_POST["password"]) 
+        "username" => htmlspecialchars($_POST["username"]),
+        "pw" => md5(htmlspecialchars($_POST["password"])) 
     ]);
 
     $user_id = $stmt ->fetchAll();

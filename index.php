@@ -6,7 +6,7 @@ session_start();
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Bejelentkezés</title>
+    <title>főoldal</title>
     <link rel = "stylesheet" href = "css/menu.css">
     <link rel="icon" type="image/x-icon" href="kiralyno.ico">
 </head>

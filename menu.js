@@ -107,3 +107,12 @@ function szinCsere(){
         i++
     }
 }
+
+function GameStart(){
+    let feketenev = document.querySelector("#feketejatekos").value
+    let fehernev = document.querySelector("#feherjatekos").value    
+
+    if(feketenev != fehernev && fehernev != "" && feketenev != "")
+    document.querySelector("#names").submit()
+
+}

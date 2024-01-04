@@ -12,14 +12,14 @@ function kapcsolodas($kapcsolatiSzoveg, $felhasznalonev = "", $jelszo = ""){
     $stmt = $kapcsolat
     ->prepare("INSERT INTO jatekosok (felhasznalonev, jelszo) VALUES (:felhasznalonev, :jelszo)")
     ->execute([
-        'felhasznalonev' => $_POST["username"],
-        'jelszo' => md5($_POST["password"]),
+        'felhasznalonev' => htmlspecialchars($_POST["username"]),
+        'jelszo' => md5(htmlspecialchars($_POST["password"])),
     ]);
 
     $stmt2 = $kapcsolat
     ->prepare("INSERT INTO pontok (nev, pont) VALUES (:nev, :pont)")
     ->execute([
-        'nev' => $_POST["username"],
+        'nev' => htmlspecialchars($_POST["username"]),
         'pont' => 0,
     ]);
 
