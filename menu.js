@@ -20,6 +20,9 @@ function nevek() {
 function sakkUrl() {
     window.location.href = "setname.php";
 }
+function rangUrl() {
+    window.location.href = "ranglista.php";
+}
 
 
 feketejatekos.addEventListener("input",checkB)
@@ -44,9 +47,9 @@ function checkB() {
                 }
         
             if(letezik)
-                document.querySelector("#check_b").innerText = "Ilyen név már van a ranglistában!";             
+                document.querySelector("#check_b").innerHTML = '<abbr title = "A ranglistában már szereplő név pontászáma felül fog íródni a játék végén.">Ilyen név már van a ranglistában!</abbr>';
             else
-                document.querySelector("#check_b").innerText = "Ilyen név még nincs a ranglistában!";
+                document.querySelector("#check_b").innerHTML = '<abbr title = "Ha vendégként játszik az illető a neve be fog kerülni a ranglistába."> Ilyen név még nincs a ranglistában!</abbr>';
         }       
     }      
 };
@@ -73,9 +76,9 @@ function checkW() {
                 }
             
             if(letezik)
-                document.querySelector("#check_w").innerText = "Ilyen név már van a ranglistában!";             
+                document.querySelector("#check_w").innerHTML = '<abbr title = "A ranglistában már szereplő név pontászáma felül fog íródni a játék végén.">Ilyen név már van a ranglistában!</abbr>';             
             else
-                document.querySelector("#check_w").innerText = "Ilyen név még nincs a ranglistában!";
+                document.querySelector("#check_w").innerHTML = '<abbr title = "Ha vendégként játszik az illető a neve be fog kerülni a ranglistába."> Ilyen név még nincs a ranglistában!</abbr>';
         }       
     }       
 };

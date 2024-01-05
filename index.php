@@ -15,7 +15,7 @@ session_start();
         <h1>Javascript sakk</h1>
         <h2><?php if (isset($_SESSION['fnev'])) echo "Üdvözöllek, " . $_SESSION['fnev'] . "!" ?></h2>
         <?php
-        if (isset($_SESSION['fnev'])) echo '<button onclick="nevek()">Játék</button><button onclick="">Ranglista</button><button onclick="logout()">Kijelentkezés</button>';
+        if (isset($_SESSION['fnev'])) echo '<button onclick="nevek()">Játék</button><button onclick="rangUrl()">Ranglista</button><button onclick="logout()">Kijelentkezés</button>';
         else echo '<button onclick="logUrl()">Bejelentkezés</button><button onclick = regUrl()>Regisztráció</button><button onclick="guestUrl()">Játék vendégként</button>';
         ?>
 

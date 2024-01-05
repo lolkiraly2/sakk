@@ -49,11 +49,14 @@ let szin = "w"
                     else
                         eszin = "w"
                     if(Patt(tabla,eszin) == true){
+                        let bnev = document.querySelector("#bname").innerText
+                        let fnev = document.querySelector("#wname").innerText
                         let form = document.querySelector("#eredmeny")
-                        document.querySelector("h1").innerText = "Patt! Az eredmény döntetlen!"
-                        document.querySelector("#gyoztes").value = "döntetlen"
-                        document.querySelector("#vesztes").value = "döntetlen"
-                        form.submit()
+                        document.querySelector("h1").innerHTML= 'Patt! Az eredmény döntetlen! <button id="sm" onclick="submit()">Eredmény elmentése és ugrás a főmenübe</button>'
+                        document.querySelector("#dontetlen").value = "döntetlen"
+                        document.querySelector("#gyoztes").value = fnev
+                        document.querySelector("#vesztes").value = bnev
+                        document.querySelector("body").style.top ="60%"
                     }
                    
                     console.table(tabla)
@@ -107,17 +110,18 @@ let szin = "w"
                                 gyoztes = "fehért"
                                 document.querySelector("#gyoztes").value = fnev
                                 document.querySelector("#vesztes").value = bnev
-                                form.submit()
+                                document.querySelector("h1").innerHTML = 'Fehér győzőtt! <button id="sm" onclick="submit()">Eredmény elmentése és és ugrás a főmenübe</button>'
+                                document.querySelector("body").style.top ="60%"
                             }
                                 
                             else{
                                 gyoztes = "fekete"
                                 document.querySelector("#gyoztes").value = bnev
                                 document.querySelector("#vesztes").value = fnev
-                                form.submit()
+                                document.querySelector("h1").innerHTML = 'Fekete győzőtt! <button id="sm" onclick="submit()">Eredmény elmentése és ugrás a főmenübe</button>'
+                                document.querySelector("body").style.top ="60%"
                             }
                                 
-                            //document.querySelector("h1").innerText = "A " + gyoztes + " győzött!"
                         }
                     }               
 
@@ -217,3 +221,7 @@ let szin = "w"
 
 
  jatek()
+
+ function submit(){
+    document.querySelector("#eredmeny").submit()
+ }

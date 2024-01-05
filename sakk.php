@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1></h1>
-    <p><?php echo 'Fekete: <span id = "bname">' .$_POST['feketejatekos'] . '</span>' ?></p>
+    <p id="bp"><?php echo 'Fekete: <span id = "bname">' .$_POST['feketejatekos'] . '</span>' ?></p>
     <div id="tabla">
 
             <div id="a8" class="zold"></div>
@@ -100,10 +100,11 @@
             <div id="h1" class="zold"></div>
           
     </div>
-    <p><?php echo 'Feher: <span id = "wname">' .$_POST['feherjatekos'] . '</span>' ?></p>
-    <form id="eredmeny" action="update.php" method="post">
+    <p id="wp"><?php echo 'Feher: <span id = "wname">' .$_POST['feherjatekos'] . '</span>' ?></p>
+    <form id="eredmeny" action="update.php" method="post" hidden>
         <input type="text" name="gyoztes" id="gyoztes">
         <input type="text" name="vesztes" id="vesztes">
+        <input type="text" name="dontetlen" id="dontetlen">
     </form>
 
 
